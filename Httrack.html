@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Gasing Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo img {
+            height: 50px; /* Adjust this to control the logo size */
+        }
+        .header-image {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 400px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            align-items: center;
+        }
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .table-container {
+            margin: 20px auto;
+            max-width: 1200px;
+			width: 100%;
+            overflow-x: auto;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #333;
+			line-height: 1.5; /* This sets the line spacing to 1.5 */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+			word-wrap: break-word; /* Forces long text to wrap */
+			overflow-wrap: anywhere; /* Allows breaking at any point */
+        }
+        th {
+            background-color: #FFA500;
+            color: white;
+            font-weight: bold;
+			height: 50px; /* Adjust header row height */
+		
+		}
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #f3f3f3;
+        }
+        tr:hover {
+            background-color: #e7e422;
+        }
+        a {
+            color: #885e20e1;
+            text-decoration: none;
+        }
+		/* Responsive design */
+		@media screen and (max-width: 770px) {
+			table {
+				font-size: 12px;
+			}
+			th, td {
+				padding: 8px;
+			}
+		}
+				.footer {
+			background-color:#ffc55b;  /* Dark background for the footer */
+			color: #030002;
+			padding: 40px 0;
+			font-size: 14px;
+		}
+
+		.footer-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 20px;
+			flex-wrap: wrap;
+		}
+
+		.footer-left {
+			flex: 1;
+			text-align: left;
+		}
+
+		.footer-left h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.footer-left p {
+			font-size: 14px;
+		}
+
+		.footer-center {
+			flex: 2;
+			text-align: center;
+		}
+
+		.footer-links {
+			list-style: none;
+			padding: 0;
+		}
+
+		.footer-links li {
+			margin: 5px 0;
+		}
+
+		.footer-links li a {
+			color: #1b010f;
+			text-decoration: none;
+			font-size: 14px;
+		}
+
+		.footer-links li a:hover {
+			text-decoration: underline;
+		}
+
+		.footer-right {
+			flex: 1;
+			text-align: right;
+		}
+
+		.social-icons {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			gap: 15px;
+		}
+
+		.social-icons li a img {
+			width: 30px;
+			height: 30px;
+			transition: transform 0.3s ease;
+		}
+
+		.social-icons li a img:hover {
+			transform: scale(1.1);  /* Slight zoom effect on hover */
+		}
+
+		@media (max-width: 768px) {
+			.footer-content {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.footer-left, .footer-center, .footer-right {
+				flex: 1 100%;  /* Each section takes full width */
+				margin-bottom: 20px;
+			}
+		}
+
+		.footer-right {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.social-icons {
+			list-style: none;
+			padding: 0;
+		}
+
+		.social-icons li {
+			display: inline-block;
+			margin-right: 15px; /* Add spacing between icons */
+		}
+
+		.social-icons i {
+			color: #220217; /* Default color */
+			font-size: 30px; /* Adjust size if needed */
+			transition: color 0.3s ease;
+		}
+
+		.social-icons i:hover {
+			color: #ffc60a; /* Color on hover */
+		}
+
+		/* Optional: Remove margin on the last item */
+		.social-icons li:last-child {
+			margin-right: 0;
+		}
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #ffb732;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #f7f468;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="images/Logo Gasing.png" alt="Logo"> <!-- Replace 'logo.png' with your image file -->
+        </a>
+        <nav class="nav-buttons">
+            <a href='index.html'>Home</a>
+			<a href='History.html'>History</a>
+            <a href='Gallery.html'>Gallery</a>
+			<a href='News.html'>News</a>
+			<a href='About Us.html'>About Us</a>
+        </nav>
+    </header>
+
+    <section class="header-image">
+        <img src="images/Gasing satu hitam.jpg" alt="Header Banner"> <!-- Replace 'banner.jpg' with your actual image filename -->
+    </section>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 4%;">HTTrack ID</th>
+					<th style="width: 4%;">Website ID</th>
+					<th style="width: 8.5%;">Page Title</th>
+					<th style="width: 16.5%;">URL</th>
+					<th style="width: 3.8%;">Archive Success (YES/NO)</th>
+					<th style="width: 4.8%;">Duration<br>(start date/time)</th>
+					<th style="width: 4.5%;">Size of File Archived (bytes)</th>
+					<th style="width: 3.8%;">No of File Archive</th>
+					<th style="width: 3.8%;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for (let i = 1; i <= 15; i++) {
+                        if (i === 1) {
+							document.write(`
+								<tr id="row1">
+									<td>HT-1</td>
+									<td>Web-1</td>
+									<td>10 Things You Should Know About: Gasing</td>
+									<td><a href="https://artsequator.com/10-things-youshould-knowabout-gasing/" target="_blank">https://artsequator.com/10-things-youshould-knowabout-gasing/</a></td>
+									<td>Yes</td>
+									<td>1 minutes 9 seconds</td>
+									<td>3406258 bytes</td>
+									<td>105 files</td>
+									<td><a href="HTTRACK/httrack1/index.html" target="_blank">View</a></td>
+								</tr>
+							`);
+						} else if (i === 2) {
+							document.write(`
+								<tr id="row2">
+									<td>HT-2</td>
+									<td>Web-2</td>
+									<td>Carian Umum</td>
+									<td><a href="https://prpm.dbp.gov.my/Cari1?keyword=gasing&d=28648&" target="_blank">https://prpm.dbp.gov.my/Cari1?keyword=gasing&d=28648&</a></td>
+									<td>Yes</td>
+									<td>1 minutes 2 seconds</td>
+									<td>2357081 bytes</td>
+									<td>71 files</td>
+									<td><a href="HTTRACK/httrack2/index.html" target="_blank">View</a></td>
+								</tr>
+							`);
+						} else if (i === 3) {
+                            document.write(`
+                                <tr id="row3">
+                                    <td>HT-3</td>
+                                    <td>Web-3</td>
+                                    <td>Seni putaran:Gasing Pangkah Tradisional yang Kian Lenyap</td>
+                                    <td><a href="https://ir.uitm.edu.my/92414/1/92414.pdf" target="_blank">https://ir.uitm.edu.my/92414/1/92414.pdf</a></td>
+                                    <td>Yes</td>
+                                    <td>1 seconds</td>
+                                    <td>927448 bytes</td>
+                                    <td>1 File</td>
+                                    <td><a href="HTTRACK/httrack3" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 4) {
+                            document.write(`
+                                <tr id="row4">
+                                    <td>HT-4</td>
+                                    <td>Web-4</td>
+                                    <td>Sejarah Permainan dan Pembuatan Gasing Pangkah Pahang</td>
+                                    <td><a href="https://ir.uitm.edu.my/92486/1/92486.pdf" target="_blank">https://ir.uitm.edu.my/92486/1/92486.pdf</a></td>
+                                    <td>Yes</td>
+                                    <td>1 seconds</td>
+                                    <td>375033 bytes</td>
+                                    <td>1 File</td>
+                                    <td><a href="HTTRACK/httrack4" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 5) {
+                            document.write(`
+                                <tr id="row5">
+                                    <td>HT-5</td>
+                                    <td>Web-5</td>
+                                    <td>jenis</td>
+                                    <td><a href="https://artofgasing.weebly.com/jenis.html" target="_blank">https://artofgasing.weebly.com/jenis.html</a></td>
+                                    <td>Yes</td>
+                                    <td>51 seconds</td>
+                                    <td>1726921 bytes</td>
+                                    <td>84 Files</td>
+                                    <td><a href="HTTRACK/httrack5/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 6) {
+                            document.write(`
+                                <tr id="row6">
+                                    <td>HT-6</td>
+                                    <td>Web-6</td>
+                                    <td>Gasing</td>
+                                    <td><a href="https://www.beautifulterengganu.com/gasing/" target="_blank">https://www.beautifulterengganu.com/gasing/</a></td>
+                                    <td>Yes</td>
+                                    <td>8 seconds</td>
+                                    <td>1759643 bytes</td>
+                                    <td>17 Files</td>
+                                    <td><a href="HTTRACK/httrack6/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);	
+						} else if (i === 7) {
+                            document.write(`
+                                <tr id="row7">
+                                    <td>HT-7</td>
+                                    <td>Web-7</td>
+                                    <td>Gelanggang Gasing</td>
+                                    <td><a href="https://www.matic.gov.my/fasiliti/sewaan/gelanggang-gasing" target="_blank">https://www.matic.gov.my/fasiliti/sewaan/gelanggang-gasing</a></td>
+                                    <td>Yes</td>
+                                    <td>14 seconds</td>
+                                    <td>2556197 bytes</td>
+                                    <td>27 Files</td>
+                                    <td><a href="HTTRACK/httrack7/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);	
+						} else if (i === 8) {
+                            document.write(`
+                                <tr id="row8">
+                                    <td>HT-8</td>
+                                    <td>Web-8</td>
+                                    <td>BERNAMA - Reviving The Traditional Gasing Spinning</td>
+                                    <td><a href="https://bernama.com/en/news.php?id=2042473" target="_blank">https://bernama.com/en/news.php?id=2042473</a></td>
+                                    <td>Yes</td>
+                                    <td>21 seconds</td>
+                                    <td>734126 bytes</td>
+                                    <td>6 Files</td>
+                                    <td><a href="HTTRACK/httrack8/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 9) {
+                            document.write(`
+                                <tr id="row9">
+                                    <td>HT-9</td>
+                                    <td>Web-9</td>
+                                    <td>sejarah - GASING art of MALAYSIA</td>
+                                    <td><a href="https://artofgasing.weebly.com/sejarah.html" target="_blank">https://artofgasing.weebly.com/sejarah.html</a></td>
+                                    <td>Yes</td>
+                                    <td>59 seconds</td>
+                                    <td>1726921 bytes</td>
+                                    <td>84 Files</td>
+                                    <td><a href="HTTRACK/httrack9/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 10) {
+                            document.write(`
+                                <tr id="row10">
+                                    <td>HT-10</td>
+                                    <td>Web-10</td>
+                                    <td>gasing - Wikikamus</td>
+                                    <td><a href="https://ms.wiktionary.org/wiki/gasing" target="_blank">https://ms.wiktionary.org/wiki/gasing</a></td>
+                                    <td>Yes</td>
+                                    <td>13 minutes 35 seconds</td>
+                                    <td>22583758 bytes</td>
+                                    <td>180 Files</td>
+                                    <td><a href="HTTRACK/httrack10/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 11) {
+                            document.write(`
+                                <tr id="row11">
+                                    <td>HT-11</td>
+                                    <td>Web-11</td>
+                                    <td>Gasing - Wikibuku</td>
+                                    <td><a href="https://ms.wikibooks.org/wiki/Gasing" target="_blank">https://ms.wikibooks.org/wiki/Gasing</a></td>
+                                    <td>Yes</td>
+                                    <td>14 minute 48 seconds</td>
+                                    <td>48265419 bytes</td>
+                                    <td>796 Files</td>
+                                    <td><a href="HTTRACK/httrack11/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 12) {
+                            document.write(`
+                                <tr id="row12">
+                                    <td>HT-12</td>
+                                    <td>Web-12</td>
+                                    <td>JENIS-JENIS GASING</td>
+                                    <td><a href="https://innadadika.wixsite.com/kamibagitahublog/jenisjenis-gasing" target="_blank">https://innadadika.wixsite.com/kamibagitahublog/jenisjenis-gasing</a></td>
+                                    <td>Yes</td>
+                                    <td>3 minutes 42 seconds</td>
+                                    <td>21803224 bytes</td>
+                                    <td>94 Files</td>
+                                    <td><a href="HTTRACK/httrack12/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 13) {
+                            document.write(`
+                                <tr id="row13">
+                                    <td>HT-13</td>
+                                    <td>Web-13</td>
+                                    <td>Gasing | PENDIDIKAN SIVIK TINGKATAN 2</td>
+                                    <td><a href="https://subjeksivik.wordpress.com/permainan-tradisional/melayu/gasing/" target="_blank">https://subjeksivik.wordpress.com/permainan-tradisional/melayu/gasing/</a></td>
+                                    <td>Yes</td>
+                                    <td>1 minute 1 second</td>
+                                    <td>1417671 bytes</td>
+                                    <td>49 Files</td>
+                                    <td><a href="HTTRACK/httrack13/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 14) {
+                            document.write(`
+                                <tr id="row14">
+                                    <td>HT-14</td>
+                                    <td>Web-14</td>
+                                    <td>Gasing, From Children's Game To Professional Sport</td>
+                                    <td><a href="https://www.visitsoutheastasia.travel/activity/gasingfromchildrensgame-toprofessionalsport/" target="_blank">https://www.visitsoutheastasia.travel/activity/gasingfromchildrensgame-toprofessionalsport/</a></td>
+                                    <td>Yes</td>
+                                    <td>17 seconds</td>
+                                    <td>1178492 bytes</td>
+                                    <td>27 Files</td>
+                                    <td><a href="HTTRACK/httrack14/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+						} else if (i === 15) {
+                            document.write(`
+                                <tr id="row15">
+                                    <td>HT-15</td>
+                                    <td>Web-15</td>
+                                    <td>Mengenal Permainan Gasing, Warisan Budaya Tak Benda dari Bumi Melayu</td>
+                                    <td><a href="https://disbudpar.batam.go.id/2020/08/04/mengenalpermainangasingwarisanbudaya-takbenda-daribumi-melayu/" target="_blank">https://disbudpar.batam.go.id/2020/08/04/mengenalpermainangasingwarisanbudaya-takbenda-daribumi-melayu/</a></td>
+                                    <td>Yes</td>
+                                    <td>34 seconds</td>
+                                    <td>8583727 bytes</td>
+                                    <td>42 Files</td>
+                                    <td><a href="HTTRACK/httrack15/index.html" target="_blank">View</a></td>
+                                </tr>
+                            `);
+					
+						}
+					}
+				</script>
+            </tbody>
+        </table>
+		<!-- Add JavaScript for highlighting the row -->
+		<script>
+		const hash = window.location.hash; // Get the part of the URL after '#'
+
+		if (hash === "#row1") {
+			// Find the row with id="row1"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row2") {
+			// Find the row with id="row2"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row3") {
+			// Find the row with id="row3"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row4") {
+			// Find the row with id="row4"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row5") {
+			// Find the row with id="row5"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}if (hash === "#row6") {
+			// Find the row with id="row6"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row7") {
+			// Find the row with id="row7"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row8") {
+			// Find the row with id="row8"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row9") {
+			// Find the row with id="row9"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row10") {
+			// Find the row with id="row10"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row11") {
+			// Find the row with id="row11"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row12") {
+			// Find the row with id="row12"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row13") {
+			// Find the row with id="row13"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row14") {
+			// Find the row with id="row14"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		if (hash === "#row15") {
+			// Find the row with id="row15"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#deccd8"; // Apply a static background color
+			}
+		}
+		</script>
+    </div>
+	<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+             <h2>Gasing Website</h2>
+            <p class="copyright_text">2025 Gasing Website. All Rights Reserved.</p>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-links">
+                <li><a href='index.html'>Home</a></li>
+                <li><a href='History.html'>History</a></li>
+                <li><a href='Gallery.html'>Gallery</a></li>
+                <li><a href='News.html'>News</a></li>
+				<li><a href='About Us.html'>About Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <ul class="social-icons">
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-3x"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-3x"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-3x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+	</footer>
+</body>
+</html>

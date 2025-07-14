@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <title>Gallery</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/Logo Gasing.png" type="image/gif" />
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+
+      <style>
+         /* Grid setup */
+         .service_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px;
+         }
+
+         /* Styling for each service box */
+         .service_box {
+            transition: all 0.3s ease;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            height: 350px; /* Fixed height for consistency */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+         }
+
+         /* Hover effect - keeping the scale effect small */
+         .service_box:hover {
+            transform: scale(1.03); /* Slightly smaller scale for a subtle hover effect */
+            background-color: #d89e3b; /* Brown-golden color */
+         }
+
+         /* Ensure image stays fixed size */
+         .service_box img {
+            width: 100%;
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures image stays within the box and does not stretch */
+            border-radius: 8px;
+         }
+
+         /* Buttons styling */
+         .service_buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+         }
+
+         .service_buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s;
+            white-space: nowrap; /* Prevent text from wrapping */
+         }
+
+         .service_buttons a:hover {
+            background-color: #0056b3;
+         }
+
+         /* Numbering in each box */
+         .service_box::before {
+            content: attr(data-number);
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #333;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 50%;
+         }
+
+         /* Responsive for smaller screens */
+         @media (max-width: 768px) {
+            .service_grid {
+               grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+            }
+         }
+
+         @media (max-width: 480px) {
+            .service_grid {
+               grid-template-columns: 1fr; /* 1 column for small screens */
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <!-- header section start -->
+      <div class="header_section">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand" href="index.html"><img src="Logo Gasing 2.png"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="History.html">History</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="Gallery.html">Gallery</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="News.html">News</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="About Us.html">About Us</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+
+      <!-- service section start -->
+      <div class="service_section layout_padding">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="service_taital">Our Gallery</h1>
+               </div>
+            </div>
+            <div class="service_section_2">
+               <div class="service_grid">
+                  <!-- Service Box 1 -->
+                  <div class="service_box" data-number="1">
+                     <img src="images/Gasing Gallery 1.png" alt="Gasing Image 1">
+                     <h4 class="residential_text">10 Things You Should</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html"_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                  <!-- Service Box 2 -->
+                  <div class="service_box" data-number="2">
+                     <img src="images/Gasing Gallery 2.jpg" alt="Gasing Image 2">
+                     <h4 class="residential_text">Carian Umum</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                  <!-- Service Box 3 -->
+                  <div class="service_box" data-number="3">
+                     <img src="images/Gasing Gallery 3.jpg" alt="Gasing Image 3">
+                     <h4 class="residential_text">Seni putaran:Gasing</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                  <!-- Service Box 4 -->
+                  <div class="service_box" data-number="4">
+                     <img src="images/Gasing Gallery 4.png" alt="Gasing Image 4">
+                     <h4 class="residential_text">Sejarah Permainan</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                  <!-- Repeat the same for other 20 boxes (boxes 5 to 24) -->
+                  <!-- Service Box 5 -->
+                  <div class="service_box" data-number="5">
+                     <img src="images/Gasing Gallery 5.jpg" alt="Gasing Image 24">
+                     <h4 class="residential_text">jenis</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                   <div class="service_box" data-number="6">
+                     <img src="images/Gasing Gallery 6.png" alt="Gasing Image 4">
+                     <h4 class="residential_text">Gasing</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                  <div class="service_box" data-number="7">
+                     <img src="images/Gasing Gallery 7.jpg" alt="Gasing Image 4">
+                     <h4 class="residential_text">Gelanggang Gasing	</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                    <div class="service_box" data-number="8">
+                     <img src="images/Gasing Gallery 8.png" alt="Gasing Image 4">
+                     <h4 class="residential_text">BERNAMA - Reviving</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                    <div class="service_box" data-number="9">
+                     <img src="images/Gasing Gallery 9.png" alt="Gasing Image 4">
+                     <h4 class="residential_text">sejarah - GASING art</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                    <div class="service_box" data-number="10">
+                     <img src="images/Gasing Gallery 10.jpg" alt="Gasing Image 4">
+                     <h4 class="residential_text">gasing - Wikikamus</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                   <div class="service_box" data-number="11">
+                     <img src="images/Gasing Gallery 11.png" alt="Gasing Image 4">
+                     <h4 class="residential_text">Gasing - Wikibuku</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                  <div class="service_box" data-number="12">
+                     <img src="images/Gasing Gallery 12.jpg" alt="Gasing Image 4">
+                     <h4 class="residential_text">JENIS-JENIS GASING</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                   <div class="service_box" data-number="13">
+                     <img src="images/Gasing Gallery 13.webp" alt="Gasing Image 4">
+                     <h4 class="residential_text">Gasing | PENDIDIKAN</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                   <div class="service_box" data-number="14">
+                     <img src="images/Gasing Gallery 14.jpg" alt="Gasing Image 4">
+                     <h4 class="residential_text">Gasing, From Children's</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+                   <div class="service_box" data-number="15">
+                     <img src="images/Gasing Gallery 15.webp" alt="Gasing Image 4">
+                     <h4 class="residential_text">Mengenal Permainan</h4>
+                     <div class="service_buttons">
+                        <a href="Website 1.html" target="_blank">Website</a>
+                        <a href="Httrack.html" target="_blank">HTTrack</a>
+                        <a href="warc.html" target="_blank">WARC</a>
+                     </div>
+                  </div>
+
+
+
+
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- service section end -->
+
+      <!-- footer section start -->
+      <div class="footer_section">
+         <div class="container">
+            <div class="footer_sectio_2">
+               <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                     <h2 class="useful_text">Quick Links</h2>
+                     <div class="footer_menu">
+                        <ul>
+                           <li><a href="index.html">Home</a></li>
+                           <li><a href="History.html">History</a></li>
+                           <li class="active"><a href="Gallery.html">Gallery</a></li>
+                           <li><a href="News.html">News</a></li>
+                           <li><a href="About Us.html">About Us</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                     <h2 class="useful_text">Gasing Website</h2>
+                     <p class="footer_text">The Gasing Web Archive Portal preserves the history, techniques, and stories of Malaysia's gasing tradition, ensuring this cultural heritage thrives for future generations.</p>
+                     <div class="social_icon">
+                        <ul>
+                           <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                           <li><a href="https://x.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                           <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4">
+                     <h2 class="useful_text">Newsletter</h2>
+                     <input type="text" class="Enter_text" placeholder="Enter Your Email" name="Enter Your Email">
+                     <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">2025 Gasing Website. All Rights Reserved.</p>
+         </div>
+      </div>
+      <!-- copyright section end -->
+
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>

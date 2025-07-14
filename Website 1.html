@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Gasing Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo img {
+            height: 50px; /* Adjust this to control the logo size */
+        }
+        
+        .header-image {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 400px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            align-items: center;
+        }
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .table-container {
+            margin: 20px auto;
+            max-width: 1200px;
+            overflow-x: auto;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #333;
+			line-height: 1.5; /* This sets the line spacing to 1.5 */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #FFA500;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #f3f3f3;
+        }
+        tr:hover {
+            background-color: #e7e422;
+        }
+        a {
+            color: #885e20e1;
+            text-decoration: none;
+        }
+		/* Responsive design */
+		@media screen and (max-width: 768px) {
+			table {
+				font-size: 12px;
+			}
+			th, td {
+				padding: 8px;
+			}
+		}
+				.footer {
+			background-color:#ffc55b;  /* Dark background for the footer */
+			color: #030002;
+			padding: 40px 0;
+			font-size: 14px;
+		}
+
+		.footer-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 20px;
+			flex-wrap: wrap;
+		}
+
+		.footer-left {
+			flex: 1;
+			text-align: left;
+		}
+
+		.footer-left h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.footer-left p {
+			font-size: 14px;
+		}
+
+		.footer-center {
+			flex: 2;
+			text-align: center;
+		}
+
+		.footer-links {
+			list-style: none;
+			padding: 0;
+		}
+
+		.footer-links li {
+			margin: 5px 0;
+		}
+
+		.footer-links li a {
+			color: #1b010f;
+			text-decoration: none;
+			font-size: 14px;
+		}
+
+		.footer-links li a:hover {
+			text-decoration: underline;
+		}
+
+		.footer-right {
+			flex: 1;
+			text-align: right;
+		}
+
+		.social-icons {
+			list-style: none;
+			padding: 0;
+			display: flex;
+			gap: 15px;
+		}
+
+		.social-icons li a img {
+			width: 30px;
+			height: 30px;
+			transition: transform 0.3s ease;
+		}
+
+		.social-icons li a img:hover {
+			transform: scale(1.1);  /* Slight zoom effect on hover */
+		}
+
+		@media (max-width: 768px) {
+			.footer-content {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.footer-left, .footer-center, .footer-right {
+				flex: 1 100%;  /* Each section takes full width */
+				margin-bottom: 20px;
+			}
+		}
+
+		.footer-right {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.social-icons {
+			list-style: none;
+			padding: 0;
+		}
+
+		.social-icons li {
+			display: inline-block;
+			margin-right: 15px; /* Add spacing between icons */
+		}
+
+		.social-icons i {
+			color: #220217; /* Default color */
+			font-size: 30px; /* Adjust size if needed */
+			transition: color 0.3s ease;
+		}
+
+		.social-icons i:hover {
+			color: #ffc60a; /* Color on hover */
+		}
+
+		/* Optional: Remove margin on the last item */
+		.social-icons li:last-child {
+			margin-right: 0;
+		}
+
+		.nav-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: #ffb732;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #f7f468;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+	<header class="header">
+        <a href="#" class="logo">
+            <img src="images/Logo Gasing.png" alt="Logo"> <!-- Replace 'logo.png' with your image file -->
+        </a>
+        <nav class="nav-buttons">
+            <a href='index.html'>Home</a>
+			<a href='History.html'>History</a>
+            <a href='Gallery.html'>Gallery</a>
+			<a href='News.html'>News</a>
+			<a href='About Us.html'>About Us</a>
+        </nav>
+    </header>
+
+    <section class="header-image">
+        <img src="images/Gasing Banner Website.jpg" alt="Header Banner"> <!-- Replace 'banner.jpg' with your actual image filename -->
+    </section>
+
+    <div class="table-container">
+        <table>
+            <thead>
+				<tr>
+					<th style="width: 1%;">No.</th>
+					<th style="width: 10%;">Website Name</th>
+					<th style="width: 20%;">Page Title</th>
+					<th style="width: 20%;">URL</th>
+					<th style="width: 13%;">Type of Website</th>
+					<th style="width: 6.5%;">Action</th>
+				</tr>
+			</thead>
+            <tbody>
+                <!-- Generate 15 rows dynamically -->
+				<script>
+
+					for (let i = 1; i <= 15; i++) {
+						if (i === 1) {
+							document.write(`
+								<tr id="row1">
+									<td>1.</td> <!-- No -->
+									<td>ArtsEquator</td> <!-- Website Name -->
+									<td>10 Things You Should Know About: Gasing</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://artsequator.com/10-things-youshould-knowabout-gasing/" target="_blank">https://artsequator.com/10-things-youshould-knowabout-gasing/</a></td> <!-- URL -->
+									<td>Blog site</td> <!-- Type of Website -->
+									<td><a href="https://artsequator.com/10-things-you-should-knowabout-gasing/" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 2) {
+							document.write(`
+								<tr id="row2">
+									<td>2.</td> <!-- No -->
+									<td>Dewan Bahasa dan Pustaka</td> <!-- Website Name -->
+									<td>Carian Umum</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://prpm.dbp.gov.my/Cari1?keyword=gasing&d=28648&" target="_blank">https://prpm.dbp.gov.my/Cari1?keyword=gasing&d=28648&</a></td> <!-- URL -->
+									<td>Gov website</td> <!-- Type of Website -->
+									<td><a href="https://prpm.dbp.gov.my/Cari1?keyword=gasing&d=28648&" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 3) {
+							document.write(`
+								<tr id="row3">
+									<td>3.</td> <!-- No -->
+									<td>UiTM Institutional Repository</td> <!-- Website Name -->
+									<td>Seni putaran:Gasing Pangkah Tradisional yang Kian Lenyap</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://ir.uitm.edu.my/92414/1/92414.pdf" target="_blank">https://ir.uitm.edu.my/92414/1/92414.pdf</a></td> <!-- URL -->
+									<td>Gov website</td> <!-- Type of Website -->
+									<td><a href="https://ir.uitm.edu.my/92414/1/92414.pdf" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 4) {
+							document.write(`
+								<tr id="row4">
+									<td>4.</td> <!-- No -->
+									<td>UiTM Institutional Repository</td> <!-- Website Name -->
+									<td>Sejarah Permainan dan Pembuatan Gasing Pangkah Pahang</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://ir.uitm.edu.my/92486/1/92486.pdf" target="_blank">https://ir.uitm.edu.my/92486/1/92486.pdf</a></td> <!-- URL -->
+									<td>Gov website</td> <!-- Type of Website -->
+									<td><a href="https://ir.uitm.edu.my/92486/1/92486.pdf" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 5) {
+							document.write(`
+								<tr id="row5">
+									<td>5.</td> <!-- No -->
+									<td>Weebly</td> <!-- Website Name -->
+									<td>jenis</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://artofgasing.weebly.com/jenis.html" target="_blank">https://artofgasing.weebly.com/jenis.html</a></td> <!-- URL -->
+									<td>Blog site</td> <!-- Type of Website -->
+									<td><a href="https://artofgasing.weebly.com/jenis.html" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 6) {
+							document.write(`
+								<tr id="row6">
+									<td>6.</td> <!-- No -->
+									<td>Beautiful Terengganu</td> <!-- Website Name -->
+									<td>Gasing</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://www.beautifulterengganu.com/gasing/" target="_blank">https://www.beautifulterengganu.com/gasing/</a></td> <!-- URL -->
+									<td>Gov website</td> <!-- Type of Website -->
+									<td><a href="https://www.beautifulterengganu.com/gasing/" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 7) {
+							document.write(`
+								<tr id="row7}">
+									<td>7.</td> <!-- No -->
+									<td>Pusat Pelancongan Malaysia (MaTiC)</td> <!-- Website Name -->
+									<td>Gelanggang Gasing</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://www.matic.gov.my/fasiliti/sewaan/gelanggang-gasing" target="_blank">https://www.matic.gov.my/fasiliti/sewaan/gelanggang-gasing</a></td> <!-- URL -->
+									<td>Gov website</td> <!-- Type of Website -->
+									<td><a href="https://www.matic.gov.my/fasiliti/sewaan/gelanggang-gasing" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 8) {
+							document.write(`
+								<tr id="row8">
+									<td>8.</td> <!-- No -->
+									<td>Bernama</td> <!-- Website Name -->
+									<td>BERNAMA - Reviving The Traditional Gasing Spinning</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://bernama.com/en/news.php?id=2042473" target="_blank">https://bernama.com/en/news.php?id=2042473</a></td> <!-- URL -->
+									<td>News website</td> <!-- Type of Website -->
+									<td><a href="https://bernama.com/en/news.php?id=2042473" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 9) {
+							document.write(`
+								<tr id="row9">
+									<td>9.</td> <!-- No -->
+									<td>Weebly</td> <!-- Website Name -->
+									<td>sejarah - GASING art of MALAYSIA</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://artofgasing.weebly.com/sejarah.html" target="_blank">https://artofgasing.weebly.com/sejarah.html</a></td> <!-- URL -->
+									<td>Blog site</td> <!-- Type of Website -->
+									<td><a href="https://artofgasing.weebly.com/sejarah.html" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 10) {
+							document.write(`
+								<tr id="row10">
+									<td>10.</td> <!-- No -->
+									<td>Wiktionary</td> <!-- Website Name -->
+									<td>gasing - Wikikamus</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://ms.wiktionary.org/wiki/gasing" target="_blank">https://ms.wiktionary.org/wiki/gasing</a></td> <!-- URL -->
+									<td>Gov website</td> <!-- Type of Website -->
+									<td><a href="https://ms.wiktionary.org/wiki/gasing" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 11) {
+							document.write(`
+								<tr id="row11">
+									<td>11.</td> <!-- No -->
+									<td>Wikibooks</td> <!-- Website Name -->
+									<td>Gasing - Wikibuku</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://ms.wikibooks.org/wiki/Gasing" target="_blank">https://ms.wikibooks.org/wiki/Gasing</a></td> <!-- URL -->
+									<td>blog site</td> <!-- Type of Website -->
+									<td><a href="https://ms.wikibooks.org/wiki/Gasing" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 12) {
+							document.write(`
+								<tr id="row12">
+									<td>12.</td> <!-- No -->
+									<td>Wix.com</td> <!-- Website Name -->
+									<td>JENIS-JENIS GASING</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://innadadika.wixsite.com/kamibagitahublog/jenisjenis-gasing" target="_blank">https://innadadika.wixsite.com/kamibagitahublog/jenisjenis-gasing</a></td> <!-- URL -->
+									<td>Blog site</td> <!-- Type of Website -->
+									<td><a href="https://innadadika.wixsite.com/kamibagitahublog/jenisjenis-gasing" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 13) {
+							document.write(`
+								<tr id="row13">
+									<td>13.</td> <!-- No -->
+									<td>WordPress.com</td> <!-- Website Name -->
+									<td>Gasing | PENDIDIKAN SIVIK TINGKATAN 2</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://subjeksivik.wordpress.com/permainan-tradisional/melayu/gasing/" target="_blank">https://subjeksivik.wordpress.com/permainan-tradisional/melayu/gasing/</a></td> <!-- URL -->
+									<td>Blog site</td> <!-- Type of Website -->
+									<td><a href="https://subjeksivik.wordpress.com/permainan-tradisional/melayu/gasing/" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 14) {
+							document.write(`
+								<tr id="row14">
+									<td>14.</td> <!-- No -->
+									<td>Visit Southeast Asia</td> <!-- Website Name -->
+									<td>Gasing, From Children's Game To Professional Sport</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://www.visitsoutheastasia.travel/activity/gasingfromchildrensgame-toprofessionalsport/" target="_blank">https://www.visitsoutheastasia.travel/activity/gasingfromchildrensgame-toprofessionalsport/</a></td> <!-- URL -->
+									<td>Gov site</td> <!-- Type of Website -->
+									<td><a href="https://www.visitsoutheastasia.travel/activity/gasingfromchildrensgame-toprofessionalsport/" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						} else if (i === 15) {
+							document.write(`
+								<tr id="row15">
+									<td>15.</td> <!-- No -->
+									<td>Dinas Kebudayaan dan Pariwisata Kota Batam</td> <!-- Website Name -->
+									<td>Mengenal Permainan Gasing, Warisan Budaya Tak Benda dari Bumi Melayu</td> <!-- Page title/ Sub-Topic -->
+									<td><a href="https://disbudpar.batam.go.id/2020/08/04/mengenalpermainangasingwarisanbudaya-takbenda-daribumi-melayu/" target="_blank">https://disbudpar.batam.go.id/2020/08/04/mengenalpermainangasingwarisanbudaya-takbenda-daribumi-melayu/</a></td> <!-- URL -->
+									<td>Gov website</td> <!-- Type of Website -->
+									<td><a href="https://disbudpar.batam.go.id/2020/08/04/mengenalpermainangasingwarisanbudaya-takbenda-daribumi-melayu/" target="_blank">View</a></td> <!-- Action -->
+								</tr>
+							`);
+						}
+					}
+				</script>
+            </tbody>
+        </table>
+		
+		<!-- Add JavaScript for highlighting the row -->
+		<script>
+		const hash = window.location.hash; // Get the part of the URL after '#'
+
+		if (hash === "#row1") {
+			// Find the row with id="row1"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row2") {
+			// Find the row with id="row2"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row3") {
+			// Find the row with id="row3"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row4") {
+			// Find the row with id="row4"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row5") {
+			// Find the row with id="row5"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}if (hash === "#row6") {
+			// Find the row with id="row6"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row7") {
+			// Find the row with id="row7"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row8") {
+			// Find the row with id="row8"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row9") {
+			// Find the row with id="row9"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row10") {
+			// Find the row with id="row10"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row11") {
+			// Find the row with id="row11"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row12") {
+			// Find the row with id="row12"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row13") {
+			// Find the row with id="row13"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row14") {
+			// Find the row with id="row14"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		if (hash === "#row15") {
+			// Find the row with id="row15"
+			const row = document.querySelector(hash);
+			if (row) {
+				row.style.backgroundColor = "#efbdbd"; // Apply a static background color
+			}
+		}
+		</script>
+    </div>
+	<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <h2>Gasing Website</h2>
+            <p class="copyright_text">2025 Gasing Website. All Rights Reserved.</p>
+        </div>
+        <div class="footer-center">
+            <ul class="footer-links">
+                <li><a href='index.html'>Home</a></li>
+                <li><a href='History.html'>History</a></li>
+                <li><a href='Gallery.html'>Gallery</a></li>
+                <li><a href='News.html'>News</a></li>
+				<li><a href='About Us.html'>About Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <ul class="social-icons">
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-3x"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-3x"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-3x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+	</footer>
+
+</body>
+</html>
+
